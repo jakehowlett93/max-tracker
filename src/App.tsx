@@ -1,11 +1,10 @@
 import React from 'react';
-import { computed } from 'mobx';
 import { observer } from 'mobx-react';
-import keywordInput, { toOptions } from './features/lift-tracking/components/keywordInput';
+import keywordInput from './features/lift-tracking/components/keywordInput';
 import getExercise from './features/lift-tracking/business/selectors/getExercise';
 
 export const App = observer(() => {
-  const exerciseOptions = computed(() => toOptions(getExercise())).get();
+  const exercise = getExercise();
 
   return (
   <div>
