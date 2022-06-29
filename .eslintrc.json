@@ -22,20 +22,20 @@
   "rules": {
     "no-use-before-define": "off",
     "@typescript-eslint/no-use-before-define": ["error"],
-    "import/extensions": [
-      "error",
-      "ignorePackages",
-      {
-      "ts": "never",
-      "tsx": "never"
-      }
-    ],
     "linebreak-style": ["error", "windows"],
-    "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }]
+    "react/jsx-filename-extension": 0,
+    "import/extensions": 0,
+    "implicit-arrow-linebreak": 0,
+    "react/function-component-definition": 0,
+    // Indent with 4 spaces
+    "indent": 0,
+    "react/jsx-indent": 0
   },
   "settings": {
     "import/resolver": {
-    "typescript": {}
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
     }
     
   }
