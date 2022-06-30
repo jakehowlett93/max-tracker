@@ -1,6 +1,7 @@
 import { action } from 'mobx';
 import state from '../../../state';
 
-export default action((exercise: string): void => {
-  state.lift.exercise = exercise;
+type Value = { value: string };
+export default action((exercise: Value): void => {
+  state.lift.exercise = exercise.value;
 });

@@ -1,5 +1,5 @@
 import { observable } from 'mobx';
-import { liftState } from './lift/state';
+import { liftState } from './lift-tracking/state';
 
 export type State = {
   lift: liftState,

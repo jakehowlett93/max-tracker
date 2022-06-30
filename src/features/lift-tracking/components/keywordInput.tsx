@@ -1,21 +1,17 @@
 import React from 'react';
 import { InputGroup } from 'react-bootstrap';
 import Select from 'react-select';
+import { Option } from '../state';
 
-type Option = {
-  label: string;
-  value: string;
-};
-export const toOptions = (arr: string[]): Option[] =>
-  arr.map((term) => ({ value: term, label: term }));
+export const toOptions = (input: string): Option => ({ value: input, label: input });
 
 type Props = {
   label: string;
   placeholder: string;
   options: Option[];
-  value: Option[];
+  value: Option;
   // eslint-disable-next-line no-unused-vars
-  onChange: (value: readonly Option[]) => void;
+  onChange: (input: any) => void;
 };
 
 const KeywordInput = ({
@@ -35,7 +31,6 @@ const KeywordInput = ({
       options={options}
       value={value}
       onChange={(input) => onChange(input)}
-      isMulti
     />
   </InputGroup>
 );
