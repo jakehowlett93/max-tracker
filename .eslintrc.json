@@ -24,7 +24,7 @@
     "@typescript-eslint/no-use-before-define": ["error"],
     "linebreak-style": 0,
     "global-require": 0,
-    "eslint linebreak-style": [0, "error", "windows"],
+    "eslint linebreak-style": 0,
     "react/jsx-filename-extension": 0,
     "import/extensions": 0,
     "implicit-arrow-linebreak": 0,
