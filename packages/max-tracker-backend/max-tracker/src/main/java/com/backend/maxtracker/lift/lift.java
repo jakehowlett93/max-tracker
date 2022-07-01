@@ -1,19 +1,20 @@
 package com.backend.maxtracker.lift;
 
 
-import java.util.Date;
-import java.util.Objects;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.util.Date;
+import java.util.Objects;
+
 
 @Entity
 @Table(name = "lifts")
 class Lift {
 
-    private @Id @GeneratedValue Long id;
+    private @Id
+    @GeneratedValue Long id;
     private String exercise;
     private Float weight;
     private String date;

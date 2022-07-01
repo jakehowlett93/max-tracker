@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { computed } from 'mobx';
 import { observer } from 'mobx-react';
 import {
@@ -13,11 +13,15 @@ import getExercise from './features/lift-tracking/business/selectors/getExercise
 import setExercise from './features/lift-tracking/business/actions/setExercise';
 import getWeight from './features/lift-tracking/business/selectors/getWeight';
 import setWeight from './features/lift-tracking/business/actions/setWeight';
+import getLifts from './features/lift-tracking/business/selectors/getLifts';
+import { fetchAllLifts } from './services/liftService';
 
 export const App = observer(() => {
+  useEffect(() => { fetchAllLifts(); }, []);
   const exercise = computed(() =>
     toOptions(getExercise())).get();
   const weight = getWeight();
+  const previousLifts = getLifts();
   const tempOptions = [
   { label: 'Benchpress', value: 'Benchpress' },
   { label: 'Deadlift', value: 'Deadlift' },
@@ -33,6 +37,11 @@ export const App = observer(() => {
           </Col>
           <Col xs={2}>
             <TextInput value={weight.toString()} label="Weight (kg)" placeholder="kg" onChange={setWeight} />
+          </Col>
+        </Row>
+        <Row>
+          <Col xs={6}>
+            {previousLifts.map((lift) => <div>{lift.exercise}</div>)}
           </Col>
         </Row>
       </Container>
