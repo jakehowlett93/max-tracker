@@ -1,23 +1,26 @@
 package com.backend.maxtracker.lift;
 
+
 import java.util.Date;
 import java.util.Objects;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "lifts")
 class Lift {
 
     private @Id @GeneratedValue Long id;
     private String exercise;
     private Float weight;
-    private Date date;
+    private String date;
 
     Lift() {}
 
-    Lift(String exercise, Float weight, Date date) {
+    Lift(String exercise, Float weight, String date) {
 
         this.exercise = exercise;
         this.weight = weight;
@@ -36,7 +39,7 @@ class Lift {
         return this.weight;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return this.date;
     }
 
@@ -52,7 +55,7 @@ class Lift {
         this.weight = weight;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
