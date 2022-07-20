@@ -10,4 +10,9 @@ class Lift extends Model
     use HasFactory;
 
     protected $table = 'lifts';
+
+    protected $fillable = [
+        'exercise',
+        'weight',
+    ];
 }
