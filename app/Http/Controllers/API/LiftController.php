@@ -50,7 +50,13 @@ class LiftController extends Controller
      */
     public function show($id)
     {
-        //
+        $lift = Lift::find($id);
+  
+        if (is_null($lift)) {
+            return $this->sendError('Lift not found.');
+        }
+   
+        return response()->json($lift, 201);
     }
 
     /**
